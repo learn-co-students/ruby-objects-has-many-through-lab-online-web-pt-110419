@@ -1,7 +1,7 @@
 require'pry'
 
 class Artist
-  attr_accessor :name, :genre, :song
+  attr_accessor :name, :song
 
   @@all = []
 
@@ -18,10 +18,12 @@ class Artist
     Song.all.select{|song| song.artist == self}
   end
 
-  def new_song(name, artist, genre)
-    if !genre == "Nerd Rock"
+  def new_song(name, genre)
       song = Song.new(name, self, genre)
-    end
+  end
+
+  def genres
+    songs.map(&:genre)
   end
 
 end
