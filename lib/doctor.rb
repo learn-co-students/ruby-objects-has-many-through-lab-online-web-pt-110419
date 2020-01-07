@@ -9,7 +9,7 @@ end
 
 def initialize(name)
     @name = name
-    self.all << self
+    @@all << self
     @appointments = []
 end
 
@@ -23,7 +23,7 @@ def appointments
         if appointment.doctor == self
             @appointments << appointment
                         end
-
+}
             @appointments
         end
     
